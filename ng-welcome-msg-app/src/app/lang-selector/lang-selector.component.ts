@@ -10,7 +10,7 @@ import { LANG_METADATA } from '../lang-metadata';
 
 export class LangSelectorComponent implements OnInit {
   langCode: string;
-  langMetadata: LANG_METADATA;
+  langMetadata = LANG_METADATA;
 
   constructor(public i18nSupporter: I18nSupportService) {
     this.langCode = i18nSupporter.langCode;
@@ -19,8 +19,7 @@ export class LangSelectorComponent implements OnInit {
   ngOnInit() {
   }
 
-  setLangCode(code: string){
-    this.langCode = code;
+  syncToServece(code){
     this.i18nSupporter.langCode = code;
   }
 }
